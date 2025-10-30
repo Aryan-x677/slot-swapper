@@ -15,13 +15,13 @@ async function signup() {
 }
 
 async function login() {
-  const username = document.getElementById("username").value;
+  const email = document.getElementById("email").value;  // match backend
   const password = document.getElementById("password").value;
 
   const res = await fetch(`${API_BASE}/auth/login`, {
     method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({ username, password }),
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, password }),
   });
 
   const data = await res.json();
@@ -31,7 +31,7 @@ async function login() {
     document.getElementById("dashboard").classList.remove("hidden");
     fetchEvents();
   } else {
-    alert("Login failed!");
+    alert("Login failed: " + (data.detail || "Unknown error"));
   }
 }
 
