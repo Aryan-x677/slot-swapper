@@ -19,6 +19,7 @@ def get_swappable_slots(db: Session = Depends(get_db), current_user: models.User
         )
     
     return slots
+
 @router.post("/swap-request", response_model=schemas.SwapRequestResponse)
 def create_swap_request(
     request_data: schemas.SwapRequestCreate,

@@ -1,5 +1,7 @@
 from pydantic import BaseModel, EmailStr
+from typing import Optional
 from datetime import datetime
+from app.models import EventStatus
 
 
 # ---------- USER SCHEMAS ----------
@@ -44,14 +46,14 @@ class EventCreate(EventBase):
     title: str
     start_time: datetime
     end_time: datetime
-    status: str | None = "BUSY"
+    status: EventStatus = EventStatus.BUSY
 
 
 class EventUpdate(BaseModel):
-    title: str | None = None
-    start_time: datetime | None = None
-    end_time: datetime | None = None
-    status: str | None = None
+    title: Optional[str] = None
+    start_time: Optional[datetime] = None
+    end_time: Optional[datetime] = None
+    status: Optional[EventStatus] = None
 
 
 class EventResponse(EventBase):
