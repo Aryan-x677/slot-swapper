@@ -25,7 +25,7 @@ The project supports **authentication, event management, and slot swapping logic
 
 ### 1️⃣ Clone Repository
 ```bash
-git clone https://github.com/<your-username>/slot-swapper.git
+git clone https://github.com/Aryan-x677/slot-swapper.git
 cd slot-swapper
 ```
 
@@ -253,3 +253,4 @@ slot_swapper_backend/
 - 🧱 The **frontend part is not implemented**, as the focus was on backend logic, REST architecture, and API reliability.  
 - 🐳 The app is Docker-ready for containerized deployment.  
 - 🔐 JWT-based authentication and secure password hashing (PassLib) are implemented.
+
